@@ -1,0 +1,27 @@
+@import "../helpers/mixins";
+@import "../helpers/colors";
+
+.new-search-label {
+  @include flex-center;
+
+  background: #0D141A;
+  border-radius: 6px;
+  padding: 10px 12px;
+  cursor: pointer;
+
+  img.search-img {
+    margin-right: 8px;
+  }
+
+  input {
+    @include font(600, 14px, 22px);
+
+    width: 100%;
+    color: white;
+    background: #0D141A;
+
+    &::placeholder {
+      color: $gray-color;
+    }
+  }
+}

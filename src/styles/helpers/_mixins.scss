@@ -1,0 +1,87 @@
+@import "./colors";
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-justify-align($justify-content, $align-items) {
+  @include flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin flex-direction($direction) {
+  @include flex;
+  flex-direction: $direction;
+}
+
+@mixin flex-center {
+  @include flex-justify-align(center, center)
+}
+
+@mixin text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin font($weight, $size, $line-height) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin selected-green-item($position) {
+  border-#{$position}: 2px solid $main-dark-green;
+  content: '';
+  position: absolute;
+  width: calc(100% - 2px);
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+
+  @if $position == top {
+    background: linear-gradient(180deg, rgba(75, 223, 64, 0.25) 0%, rgba(75, 223, 64, 0) 100%);
+    top: 0;
+    left: 0;
+  }
+  @if $position == right {
+    background: linear-gradient(270deg, rgba(75, 223, 64, 0.25) 0%, rgba(75, 223, 64, 0) 100%);
+    top: 0;
+    right: 0;
+  }
+  @if $position == bottom {
+    background: linear-gradient(0deg, rgba(75, 223, 64, 0.25) 0%, rgba(75, 223, 64, 0) 100%);
+    bottom: 0;
+    left: 0;
+  }
+  @if $position == left {
+    background: linear-gradient(90deg, rgba(75, 223, 64, 0.25) 0%, rgba(75, 223, 64, 0) 100%);
+    top: 0;
+    left: 0;
+  }
+}
+
+@mixin icon-background-mask($icon-url, $default-background) {
+  -webkit-mask: url($icon-url) no-repeat center;
+  background: $default-background;
+}
+
+@mixin transform-center() {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin background($size, $repeat, $position-x, $position-y) {
+  background-size: $size;
+  background-position: $position-x $position-y;
+  background-repeat: $repeat;
+}
+
+@mixin absolute-pos-center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

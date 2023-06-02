@@ -1,0 +1,18 @@
+<div class="root">
+    <header class="header">
+        <div class="header__name">Medieval Extreme</div>
+        <div class="header-content">
+            <div class="user-info">
+                <img alt="user-photo" src="assets/img/common/user-photo-placeholder.png" class="user-info__img">
+                <div class="user-info__name">{{(user$ | async)?.name}}</div>
+            </div>
+            <button class="new-common-button header-content__sign-off-button"
+                    (click)="onSignOutClick()">
+                Exit
+            </button>
+        </div>
+    </header>
+    <main class="main">
+        <router-outlet></router-outlet>
+    </main>
+</div>

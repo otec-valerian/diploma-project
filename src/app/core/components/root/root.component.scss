@@ -1,0 +1,41 @@
+@import "src/styles/styles";
+
+.root{
+  @include flex-direction(column);
+}
+
+.header{
+  @include flex-justify-align(space-between, center);
+  width: 100%;
+  padding: 12px;
+  background: $bg-color-2;
+
+  &__name {
+    @include font(600, 32px, 30px);
+  }
+}
+
+.header-content{
+  @include flex-center();
+}
+
+.user-info{
+  @include flex-center();
+  margin-right: 24px;
+
+  &__img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  &__name {
+    @include font(400, 24px, 16px);
+  }
+}
+
+.main{
+  display: flex;
+  width: 100%;
+}

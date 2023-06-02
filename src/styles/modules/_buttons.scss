@@ -1,0 +1,73 @@
+@import "../helpers/mixins";
+@import "../helpers/colors";
+
+.new-common-button {
+  @include flex-center;
+  background: $bg-color-3-and-strokes;
+  border-radius: 4px;
+  border: 1px solid $bg-color-3-and-strokes;
+  cursor: pointer;
+  transition: background, border .2s ease-in-out;
+
+  &:hover {
+    border-color: $main-dark-green;
+    background: rgba(75, 223, 64, 0.25);
+
+    .new-common-button__icon {
+      background: white;
+    }
+  }
+
+  &:active {
+    border: 2px solid $main-dark-green;
+    background: rgba(1, 184, 0, 0.25);
+  }
+}
+
+.new-colour-button {
+  @include flex-center;
+  @include font(600, 14px, 17px);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border, background-color .2s ease-in-out;
+
+  &--green {
+    background-color: rgba(75, 223, 64, 0.15);
+    border: 1px solid $main-light-green-color;
+
+    &:hover {
+      background-color: $main-dark-green;
+    }
+
+    &:active {
+      background-color: $main-dark-green;
+    }
+  }
+
+  &--red {
+    background: rgba(222, 74, 72, 0.15);
+    border: 1px solid $error-and-close-color;
+
+    &:hover {
+      border: 2px solid $error-and-close-color;
+    }
+
+    &:active {
+      background-color: $error-and-close-color;
+    }
+  }
+
+  &__text {
+    @include font(600, 14px, 17px);
+  }
+}
+
+.new-full-colour-button {
+  @include flex-center;
+  @include font(600, 16px, 19px);
+  background: #01B800;
+  padding: 14px;
+  box-shadow: 0 12px 48px 20px rgba(1, 184, 0, 0.15);
+  border-radius: 6px;
+  cursor: pointer;
+}

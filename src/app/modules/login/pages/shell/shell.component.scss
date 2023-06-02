@@ -1,0 +1,15 @@
+@import "src/styles/styles";
+
+.login{
+  @include flex-center();
+  padding: 20px;
+
+  &__button {
+    padding: 12px;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BaseFacade} from "@core/state";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'diploma-project';
+  constructor(private baseFacade: BaseFacade) {
+    this.baseFacade.dispatchGetUser();
+  }
 }

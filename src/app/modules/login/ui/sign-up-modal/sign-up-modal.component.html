@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Sign Up</h1>
+<div mat-dialog-content class="form-fields">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="form.controls.email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput [formControl]="form.controls.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [formControl]="form.controls.password">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Repeat password</mat-label>
+    <input type="password" matInput [formControl]="form.controls.repeatPassword">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button [disabled]="form.invalid" (click)="onCancelClick()">Sign-up</button>
+</div>

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Provide a feedback to the product</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Feedback</mat-label>
+        <input type="text" matInput [formControl]="form.controls.feedback">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button [disabled]="form.invalid" (click)="onCancelClick()">Send feedback</button>
+</div>

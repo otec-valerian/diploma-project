@@ -22,12 +22,29 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    ],
+    "paths": {
+      "@core": [
+        "src/app/core/index.ts"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@environment": [
+        "src/environments/index.ts"
+      ],
+      "@shared": [
+        "src/app/shared/index.ts"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@main": [
+        "src/app/modules/main/index.ts"
+      ],
+      "@login": [
+        "src/app/modules/login/index.ts"
+      ]
+    }
   }
 }

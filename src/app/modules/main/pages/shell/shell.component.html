@@ -1,0 +1,19 @@
+<div class="products">
+    <div class="products-list list">
+        <div class="product" *ngFor="let product of (products$ | async)">
+            <img alt="product-photo" class="product__img" [src]="product.img">
+            <div class="product__name">{{product.name}}</div>
+            <div class="product__price">{{product.price}}</div>
+            <button class="new-colour-button new-colour-button--green product__button" (click)="onBuyProductClick(product.uuid)">Buy</button>
+        </div>
+    </div>
+    <div class="recommended-products-list list">
+        <button class="new-colour-button new-colour-button--green recommended-products-list__button" (click)="onGetRecommendedProductClick()">Get Recommended Product</button>
+        <div class="product" *ngFor="let product of (recommendedProducts$ | async)">
+            <img alt="product-photo" class="product__img" [src]="product.img">
+            <div class="product__name">{{product.name}}</div>
+            <div class="product__price">{{product.price}}</div>
+            <button class="new-colour-button new-colour-button--green product__button" (click)="onBuyProductClick(product.uuid)">Buy</button>
+        </div>
+    </div>
+</div>

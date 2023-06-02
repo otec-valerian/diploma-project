@@ -1,0 +1,16 @@
+@import "../helpers/colors";
+
+* {
+  box-sizing: border-box;
+  font-family: 'Gilroy', sans-serif;
+}
+
+div {
+  color: white;
+}
+
+body {
+  margin: 0;
+  height: auto;
+  background: $bg-color-1;
+}

@@ -1,0 +1,5 @@
+@import "src/styles/styles";
+
+.form-fields{
+  @include flex-direction(column);
+}
