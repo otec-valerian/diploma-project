@@ -13,7 +13,6 @@ export class ProductsService {
 
     constructor(private httpClient: HttpClient) {
         let a = new SVDPP(1, 0.001, 0.001);
-        console.log(a)
     }
 
     public getProducts(): Observable<Product[]> {
