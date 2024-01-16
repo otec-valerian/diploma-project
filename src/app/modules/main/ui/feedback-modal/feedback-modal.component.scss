@@ -1,0 +1,63 @@
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .plan {
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    gap: 12px;
+    border-radius: 12px;
+    border: 1px solid dimgrey;
+    background: lightgray;
+
+    .title {
+      font: 600 25px/38px 'Lucida Bright';
+      color: red;
+    }
+
+    .content{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-left: 12px;
+
+      .option{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .label{
+          font: 500 22px/34px 'Lucida Bright';
+
+        }
+        .value {
+          font: 400 20px/28px 'Lucida Bright';
+        }
+      }
+    }
+
+    &:hover {
+      border: 1px solid green;
+    }
+
+    &.active {
+      border: 1px solid greenyellow;
+      background: lightblue;
+    }
+
+    &.basic{
+      color: black;
+      border-color: black;
+    }
+    &.premium{
+      color: orange;
+      border-color: darkorange;
+    }
+    &.enterprise{
+      color: seagreen;
+      border-color: seashell;
+    }
+  }
+}

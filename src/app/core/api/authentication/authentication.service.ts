@@ -17,9 +17,12 @@ export class AuthenticationService {
         // return this.httpClient.get<User>(`${this.apiUrl}/current-user`);
         // return of({uuid: '1', login: 'otec_valerian', name: 'OTEC'}).pipe(delay(1000));
         const userJSON: string | null = localStorage.getItem('user');
+        // console.log(userJSON)
         if (userJSON) {
-            return of(JSON.parse(userJSON)).pipe(delay(1000));
+            // console.log('yes')
+            return of(JSON.parse(userJSON)).pipe(delay(100));
         } else {
+            // console.log('no')
             //@ts-ignore
             return throwError(() => new HttpErrorResponse({error: '401 unauthorized', status: 401}));
         }
@@ -51,7 +54,7 @@ export class AuthenticationService {
             localStorage.setItem('users', JSON.stringify([user]))
         }
         localStorage.setItem('user', JSON.stringify(user))
-        return of({user: user as User}).pipe(delay(1000));
+        return of({user: user as User}).pipe(delay(100));
 
     }
 
@@ -60,8 +63,9 @@ export class AuthenticationService {
         let user = localStorage.getItem('user');
         if (user) {
             localStorage.removeItem('user');
-            return of(JSON.parse(user)).pipe(delay(1000))
+            return of(JSON.parse(user)).pipe(delay(100))
         }
         return throwError(() => new HttpErrorResponse({error: 'User is not logged in', status: 400}));
+
     }
 }

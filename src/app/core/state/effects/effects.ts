@@ -20,7 +20,7 @@ export class BaseEffects {
             ofType(BaseActions.getUser),
             switchMap(() =>
                 this.authenticationService.getCurrentUser().pipe(
-                    map((user: User) => {console.log('in ok getuser', user);return BaseActions.getUserSuccess({user})}),
+                    map((user: User) => {return BaseActions.getUserSuccess({user})}),
                     catchError((error: HttpErrorResponse) => {console.log('!!!!', error);return of(BaseActions.getUserFailure({ error }))})
                 )
             )

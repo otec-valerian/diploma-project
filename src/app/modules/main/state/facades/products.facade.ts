@@ -23,7 +23,7 @@ export class ProductsFacade {
     }
 
     public dispatchGetProducts(): void {
-        console.log('disaptch get products')
+        // console.log('disaptch get products')
         this.store.dispatch(ProductActions.getProducts());
     }
 

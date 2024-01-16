@@ -34,7 +34,7 @@
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles/styles.scss"
             ],
-            "scripts": ["./assets/scripts/svd-alghoritm.js"],
+            "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },

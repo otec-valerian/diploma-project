@@ -1,11 +1,58 @@
-<h1 mat-dialog-title>Provide a feedback to the product</h1>
-<div mat-dialog-content>
-    <mat-form-field>
-        <mat-label>Feedback</mat-label>
-        <input type="text" matInput [formControl]="form.controls.feedback">
-    </mat-form-field>
+<h1 mat-dialog-title>Choose a subscription plan</h1>
+<div class="modal-content" mat-dialog-content>
+  <div class="plan basic" [class.active]="selectedOption == 'basic'" (click)="selectedOption = 'basic'">
+    <div class="title">Basic Plan</div>
+    <div class="content">
+      <div class="option">
+        <div class="label">Users limit</div>
+        <div class="value">5</div>
+      </div>
+      <div class="option">
+        <div class="label">Price</div>
+        <div class="value">25$/month</div>
+      </div>
+      <div class="option">
+        <div class="label">File size limit</div>
+        <div class="value">1 GB</div>
+      </div>
+    </div>
+  </div>
+  <div class="plan premium" [class.active]="selectedOption == 'premium'"  (click)="selectedOption = 'premium'">
+    <div class="title">Premium Plan</div>
+    <div class="content">
+      <div class="option">
+        <div class="label">Users limit</div>
+        <div class="value">10</div>
+      </div>
+      <div class="option">
+        <div class="label">Price</div>
+        <div class="value">50$/month</div>
+      </div>
+      <div class="option">
+        <div class="label">File size limit</div>
+        <div class="value">5 GB</div>
+      </div>
+    </div>
+  </div>
+  <div class="plan enterprise" [class.active]="selectedOption == 'enterprise'" (click)="selectedOption = 'enterprise'">
+    <div class="title">Enterprise Plan</div>
+    <div class="content">
+      <div class="option">
+        <div class="label">Users limit</div>
+        <div class="value">20</div>
+      </div>
+      <div class="option">
+        <div class="label">Price</div>
+        <div class="value">100$/month</div>
+      </div>
+      <div class="option">
+        <div class="label">File size limit</div>
+        <div class="value">10 GB</div>
+      </div>
+    </div>
+  </div>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="onCancelClick()">Cancel</button>
-    <button mat-button [disabled]="form.invalid" (click)="onCancelClick()">Send feedback</button>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button [disabled]="form.invalid" (click)="onCancelClick()">Save</button>
 </div>

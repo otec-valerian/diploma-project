@@ -10,6 +10,8 @@ import {FeedbackForm} from "../../types";
     templateUrl: './feedback-modal.component.html'
 })
 export class FeedbackModalComponent {
+  public selectedOption: 'basic' | 'premium' | 'enterprise' = 'premium';
+
     constructor(public dialogRef: MatDialogRef<FeedbackModalComponent>,
                 @Inject(MAT_DIALOG_DATA) public form: FormGroup<FeedbackForm>) {
     }

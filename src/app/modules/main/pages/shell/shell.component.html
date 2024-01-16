@@ -1,19 +1,20 @@
-<div class="products">
-    <div class="products-list list">
-        <div class="product" *ngFor="let product of (products$ | async)">
-            <img alt="product-photo" class="product__img" [src]="product.img">
-            <div class="product__name">{{product.name}}</div>
-            <div class="product__price">{{product.price}}</div>
-            <button class="new-colour-button new-colour-button--green product__button" (click)="onBuyProductClick(product.uuid)">Buy</button>
-        </div>
+<div class="main">
+  <div class="main-row">
+    <div class="main-section">
+      <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="italic">Org</mat-button-toggle>
+        <mat-button-toggle value="underline">Solo</mat-button-toggle>
+      </mat-button-toggle-group>
     </div>
-    <div class="recommended-products-list list">
-        <button class="new-colour-button new-colour-button--green recommended-products-list__button" (click)="onGetRecommendedProductClick()">Get Recommended Product</button>
-        <div class="product" *ngFor="let product of (recommendedProducts$ | async)">
-            <img alt="product-photo" class="product__img" [src]="product.img">
-            <div class="product__name">{{product.name}}</div>
-            <div class="product__price">{{product.price}}</div>
-            <button class="new-colour-button new-colour-button--green product__button" (click)="onBuyProductClick(product.uuid)">Buy</button>
-        </div>
+    <div class="main-section">
+      <button class="new-colour-button new-colour-button--green login__button" (click)="onBuySubscriptionClick()">Add organisation</button>
+      <button class="new-colour-button new-colour-button--green login__button" >Add article</button>
     </div>
+  </div>
+  <div class="loader"></div>
 </div>

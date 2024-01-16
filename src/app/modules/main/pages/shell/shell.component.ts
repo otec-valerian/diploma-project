@@ -29,26 +29,14 @@ export class ShellComponent {
         this.productsFacade.dispatchGetProducts();
     }
 
-    public onBuyProductClick(uuid: string): void {
-        this.productsFacade.dispatchBuyProduct(uuid);
-        this.productsFacade.buyProductSuccess$.pipe(
-            filter((product: Product) => !!product),
-            take(1)
-        ).subscribe((product: Product) => {
-            const dialogRef = this.dialog.open(FeedbackModalComponent, {
-                data: this.feedbackForm,
-            });
+    public onBuySubscriptionClick(): void {
+      const dialogRef = this.dialog.open(FeedbackModalComponent, {
+        data: this.feedbackForm,
+      });
 
-            dialogRef.afterClosed().subscribe(() => {
-                console.log('The dialog was closed');
-                if (this.feedbackForm.valid) {
-                    this.productsFacade.dispatchFeedbackProduct({
-                        uuid: product.uuid,
-                        mark: this.feedbackForm.controls.feedback.value as number
-                    })
-                }
-            });
-        })
+      dialogRef.afterClosed().subscribe(() => {
+
+      });
     }
 
     public onGetRecommendedProductClick(): void {

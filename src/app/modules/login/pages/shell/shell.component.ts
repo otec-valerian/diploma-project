@@ -35,7 +35,7 @@ export class ShellComponent {
             password: new FormControl<string | null>(null, [Validators.required]),
             repeatPassword: new FormControl<string | null>(null, [Validators.required, this.createPasswordStrengthValidator])
         });
-        console.log('IN LOGIN')
+        // console.log('IN LOGIN')
     }
 
     public onSignInClick(): void {
@@ -44,7 +44,7 @@ export class ShellComponent {
         });
 
         dialogRef.afterClosed().subscribe(() => {
-            console.log('The dialog was closed');
+            // console.log('The dialog was closed');
             if (this.signInForm.valid) {
                 this.baseFacade.dispatchSignIn({
                     login: this.signInForm.controls.email.value as string,
@@ -60,7 +60,7 @@ export class ShellComponent {
         });
 
         dialogRef.afterClosed().subscribe(() => {
-            console.log('The dialog was closed');
+            // console.log('The dialog was closed');
             if (this.signUpForm.valid) {
                 this.baseFacade.dispatchSignUp({
                     name: this.signUpForm.controls.name.value as string,

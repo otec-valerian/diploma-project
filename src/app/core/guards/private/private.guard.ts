@@ -11,11 +11,11 @@ export const privateGuard = ():Observable<boolean | UrlTree> | Promise<boolean |
     return baseFacade.user$.pipe(
         filter((user: User | null | undefined) => user !== undefined),
         map((user: User | null | undefined) => {
-            console.log('IN PRIVATE GUARD', user)
+            // console.log('IN PRIVATE GUARD', user)
             if (user) {
                 return true;
             } else {
-                console.log('redirect to login')
+                // console.log('redirect to login')
                 router.navigateByUrl('/login');
                 return false;
             }
